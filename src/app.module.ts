@@ -6,9 +6,9 @@ import { User } from 'src/users/users.model';
 import { RolesModule } from './roles/roles.module';
 import { Role } from 'src/roles/roles.model';
 import { UserRoles } from 'src/roles/user-roles.model';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  controllers: [],
   imports: [
     ConfigModule.forRoot({
       envFilePath: `.${process.env.NODE_ENV}.env`,
@@ -25,6 +25,7 @@ import { UserRoles } from 'src/roles/user-roles.model';
     }),
     UsersModule,
     RolesModule,
+    AuthModule,
   ],
 })
 export class AppModule {}

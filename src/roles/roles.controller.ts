@@ -6,6 +6,11 @@ import { RolesService } from 'src/roles/roles.service';
 export class RolesController {
   constructor(private roleService: RolesService) {}
 
+  @Get()
+  getAllRoles() {
+    return this.roleService.getAllRoles();
+  }
+
   @Post()
   create(@Body() dto: CreateRoleDto) {
     return this.roleService.createRole(dto);
